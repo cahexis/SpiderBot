@@ -20,7 +20,7 @@ anim.AnimationId = "rbxassetid://139819329204805"
 local track = bothum:LoadAnimation(anim)
 local bind = bot.Target
 
-local function awake()
+local function awake() --animation to play when it detects a player
 	sleeptrack:Stop()
 	track:Play()
 	head.alert:Play()
@@ -33,7 +33,7 @@ end
 game.Players.PlayerAdded:Connect(function()
 	sleeptrack:Play()	
 end)
-runningtime = rs.Stepped:Connect(function()
+runningtime = rs.Stepped:Connect(function() --attempt at learning to not use a hidden part most of the time, it actually detects in a range around it for a player.
 	local range = 20
 	for i,v in pairs(game.Workspace:GetDescendants()) do
 		if v:IsA("Humanoid") and v ~= bothum then
