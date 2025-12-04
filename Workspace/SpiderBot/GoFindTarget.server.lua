@@ -27,7 +27,7 @@ local function bombtick()
 	end
 end
 
-bind.Event:Connect(function(closest)
+bind.Event:Connect(function(closest) -- chases the player
 	wait(0.2)
 	track:Play()
 	runningtime = rs.Stepped:Connect(function()
@@ -35,7 +35,7 @@ bind.Event:Connect(function(closest)
 	end)
 end)
 
-bind.Event:Connect(function(closest)
+bind.Event:Connect(function(closest) -- the explosion with ticking and sound.
 	firesound:Play()
 	fireemit.Enabled = true
 	bombtick()
